@@ -3,19 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <title>CCIT Programs</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/programs.css">
 </head>
 <body>
-  <!-- HEADER will be inserted here -->
+  <!-- HEADER will be inserted dynamically -->
   <div id="header"></div>
 
   <main>
-    <h1>Our Programs</h1>
-    <ul>
-      <li>Bachelor of Science in Computer Science</li>
-      <li>Bachelor of Science in Information Technology</li>
-    </ul>
+    <!-- HERO SECTION -->
+    <section class="programs-hero">
+      <div class="hero-content">
+        <h1>Explore Our Programs</h1>
+        <p>
+          The College of Communication and Information Technology (CCIT) 
+          equips students with the knowledge and skills to become innovators 
+          and leaders in the field of computing and technology.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROGRAM LIST SECTION -->
+    <section class="programs-list">
+      <h2>Our Undergraduate Programs</h2>
+      <div class="program-cards">
+        <div class="program-card">
+          <h3>Bachelor of Science in Computer Science</h3>
+          <p>
+            Focuses on algorithm design, software development, 
+            artificial intelligence, and advanced computing principles 
+            to prepare graduates for careers in software engineering, 
+            research, and IT solutions.
+          </p>
+        </div>
+
+        <div class="program-card">
+          <h3>Bachelor of Science in Information Technology</h3>
+          <p>
+            Provides practical training in IT infrastructure, 
+            system administration, web and mobile development, 
+            and database management to meet the needs of modern industries.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
+  <div id="footer"></div>
+
+<script>
+  // Load header
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+
+  // Load footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
 
   <!-- Load header.html dynamically -->
   <script>

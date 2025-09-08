@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCIT Student Organizations</title>
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/organizations.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <main class="org-page">
+    <section class="org-hero">
+      <h1>Student Organizations & Campus Groups</h1>
+      <p class="tagline">Grow your skills, lead your community, and belong to something bigger.</p>
+    </section>
+
+    <section class="org-section">
+      <div class="org-cards">
+        <div class="org-card">
+          <h2>CCIT-SBO</h2>
+          <p><em>College of Communication and Information Technology</em></p>
+        </div>
+        <div class="org-card">
+          <h2>DIGITS</h2>
+          <p><em>(Meaning later)</em></p>
+        </div>
+        <div class="org-card">
+          <h2>ASCII</h2>
+          <p><em>Association of Students in Communication and Information Interchange</em></p>
+        </div>
+      </div>
+    </section>
+
+   <section class="org-wrapper">
+  <div class="org-section">
+    <h2>CCIT Publication</h2>
+    <div class="org-card">
+      <h3>The Cipher</h3>
+    </div>
+  </div>
+
+  <div class="org-section">
+    <h2>University Publication<br>
+        (Main Campus)</h2>
+    <div class="org-card">
+      <h3>The Bastion Group of Publication</h3>
+    </div>
+  </div>
+</section>
+
+    <section class="org-section">
+      <h2>Other Organizations (Main Campus)</h2>
+      <ul class="org-list">
+        <li>PRMSU Supreme Student Government</li>
+        <li>PRMSU Peer Facilitators</li>
+        <li>PRMSU CADO</li>
+        <li>PRMSU Teatro Dingal (TELON, ENTABLADO, AT AKO TUNGO SA RESPONSABLENG ORGANISASYON - DINGAL)</li>
+        <li>Philippine Anti Illegal Drugs Strategy</li>
+        <li>Young Entrepreneurs Society</li>
+        <li>Ramonian Varsity Christian Fellowship</li>
+        <li>PRMSU Red Cross Youth Council</li>
+        <li>PRMSU PATEL - Patriot Association of Triumphant and Excellent Leaders</li>
+        <li>PRMSU KDT - Kultura Dance Troupe</li>
+        <li>HOPE Student Campus Ministry</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script>
+    // Load header and footer dynamically
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    });
+  </script>
+</body>
+</html>

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CCIT - Welcome</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -16,15 +18,16 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
+    <video id="heroVideo" autoplay muted loop playsinline class="hero-video">
       <source src="assets/videos/PRMSU_Today_2024.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
     <div class="hero-overlay">
-      <h1>Welcome to CCIT 🎓</h1>
-      <p>Your journey in tech begins here.</p>
+      <h1>Join the College of Communication and Information Technology</h1>
+      <p>Home of Leaders in Innovation</p>
       <a class="btn" href="programs.html">Explore Programs</a>
+       <button id="toggleBtn" class="btn">⏸ Pause</button>
     </div>
   </section>
 
@@ -33,11 +36,38 @@
     <p>uhmmmme.</p>
     <!-- Add more content here to test scrolling -->
     <div style="height: 1000px; padding: 50px;">
-      <h2>ang sakit na ng ulo kooo uhuhuhu</h2>
-      <p>May 50% na po ba itu</p>
-      <p>Isip pa po ako content ma'am...</p>
+      <h2>So andito po prmsu vision,mission, and quality policy</h2>
+      <p>PAti College goals.Edit ko pa po sa Canva hehee</p>
+      <p>feel ko 50% na i2</p>
     </div>
-  </main>
+  </main>\
+  <div id="footer"></div>
+
+<script>
+  // Load header
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+
+  // Load footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+<script>
+  const video = document.getElementById("heroVideo");
+  const btn = document.getElementById("toggleBtn");
+  btn.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      btn.textContent = "⏸ Pause";
+    } else {
+      video.pause();
+      btn.textContent = "▶ Play";
+    }
+  });
+</script>
 
   <!-- Load header.html dynamically -->
   <script>
