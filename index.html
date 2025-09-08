@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCIT - Welcome</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+</head>
+<body>
+
+  <!-- HEADER will be inserted here -->
+  <div id="header"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="assets/videos/PRMSU_Today_2024.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-overlay">
+      <h1>Welcome to CCIT 🎓</h1>
+      <p>Your journey in tech begins here.</p>
+      <a class="btn" href="programs.html">Explore Programs</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <p>uhmmmme.</p>
+    <!-- Add more content here to test scrolling -->
+    <div style="height: 1000px; padding: 50px;">
+      <h2>ang sakit na ng ulo kooo uhuhuhu</h2>
+      <p>May 50% na po ba itu</p>
+      <p>Isip pa po ako content ma'am...</p>
+    </div>
+  </main>
+
+  <!-- Load header.html dynamically -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(response => {
+          if (!response.ok) throw new Error("Header not found");
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("header").innerHTML = data;
+
+          // Load header.js after header is inserted
+          const script = document.createElement("script");
+          script.src = "assets/js/header.js";
+          
+          // Initialize scroll effect after script loads
+          script.onload = () => {
+            console.log('Header script loaded');
+            setTimeout(() => {
+              if (typeof initHeaderScrollEffect === 'function') {
+                initHeaderScrollEffect();
+              }
+            }, 50);
+          };
+          
+          document.body.appendChild(script);
+        })
+        .catch(err => console.error("Error loading header:", err));
+    });
+  </script>
+</body>
+</html>
