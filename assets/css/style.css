@@ -179,21 +179,7 @@ main {
   transform: scale(1.05);
 }
 
-/* Footer Styles */
-.site-footer {
-  background: linear-gradient(to left, #0b2001, #3c6404);
-  color: white;
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 30px;
-  font-size: 14px;
-  border-top: 4px solid #f1c40f;
-}
 
-.site-footer p {
-  margin: 5px 0;
-  line-height: 1.4;
-}
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInDown {

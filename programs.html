@@ -5,6 +5,7 @@
   <title>CCIT Programs</title>
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/programs.css">
+  <link rel="stylesheet" href="assets/css/footer.css"> <!-- ✅ Added footer.css -->
 </head>
 <body>
   <!-- HEADER will be inserted dynamically -->
@@ -48,27 +49,19 @@
       </div>
     </section>
   </main>
+
   <div id="footer"></div>
 
-<script>
-  // Load header
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("header").innerHTML = data);
-
-  // Load footer
-  fetch("footer.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("footer").innerHTML = data);
-</script>
-
-  <!-- Load header.html dynamically -->
   <script>
+    // Load header
     fetch("header.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-      });
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Load footer
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
   </script>
 </body>
 </html>

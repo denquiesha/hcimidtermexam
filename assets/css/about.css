@@ -1,0 +1,109 @@
+/* ===== HERO SECTION ===== */
+.about-hero {
+  background: linear-gradient(to right, #0b2001, #3c6404);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  max-height: 300px;
+}
+
+.about-hero .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 140px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ===== ORG STRUCTURE ===== */
+.ccit-org {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.org-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ccit-org h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #3c6404;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #0b2001;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.card ul li {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #555;
+}

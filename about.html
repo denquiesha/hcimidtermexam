@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCIT - About Us</title>
+
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body>
+
+<!-- Header placeholder -->
+<div id="header"></div>
+
+<!-- Hero Section -->
+<section class="about-hero">
+  <div class="hero-content">
+    <h1>About the College of Communication and Information Technology</h1>
+    <p>Meet our leadership team and dedicated faculty driving innovation and excellence in computing education.</p>
+  </div>
+</section>
+
+<!-- Main Content: Organizational Structure -->
+<section class="ccit-org">
+  <div class="org-container">
+    <h2>CCIT Organizational Structure</h2>
+    <div class="org-chart">
+
+      <!-- Dean -->
+      <div class="level dean">
+        <div class="card">
+          <img src="assets/images/blank.jpg" alt="CCIT Dean">
+          <h3>MENCHIE A. DELA CRUZ, Ph.D.</h3>
+          <p>CCIT Dean</p>
+        </div>
+      </div>
+
+      <!-- Program Chairs -->
+      <div class="level chairs">
+        <div class="card">
+          <img src="assets/images/blank.jpg" alt="IT Program Chair">
+          <h3>GEOFFREY SEPILLO EdD.</h3>
+          <p>BS Information Technology Program Chair</p>
+        </div>
+        <div class="card">
+          <img src="assets/images/blank.jpg" alt="CS Program Chair">
+          <h3>ENGR. CARL ANGELO S. PAMPLONA</h3>
+          <p>BS Computer Science Program Chair</p>
+        </div>
+      </div>
+
+      <!-- Professors -->
+      <div class="level profs">
+        <div class="card">
+          <img src="assets/images/blank.jpg" alt="InfoTech Professors">
+          <h3>InfoTech Professors</h3>
+          <ul>
+            <li>Prof. Lee Heeseung</li>
+            <li>listing others....</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="assets/images/blank.jpg" alt="CS Professors">
+          <h3>CS Professors</h3>
+          <ul>
+            <li>Prof. Marionne Joyce Tapado</li>
+            <li>listing others....</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer placeholder -->
+<div id="footer"></div>
+
+<!-- JS to load header & footer -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Load header
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+      const script = document.createElement("script");
+      script.src = "assets/js/header.js";
+      script.onload = () => {
+        if (typeof initHeaderScrollEffect === 'function') initHeaderScrollEffect();
+      };
+      document.body.appendChild(script);
+    })
+    .catch(err => console.error("Error loading header:", err));
+
+  // Load footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data)
+    .catch(err => console.error("Error loading footer:", err));
+
+});
+</script>
+
+</body>
+</html>
