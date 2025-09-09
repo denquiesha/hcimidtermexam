@@ -1,11 +1,11 @@
 /* ===== GENERAL STYLES ===== */
 body {
-  font-family: 'Roboto', sans-serif; /* Default for body */
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: #929292;
+  background: #ffffff;
   color: #333333;
 }
 
@@ -34,6 +34,8 @@ main {
   border-radius: 5px;
   text-decoration: none;
   transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -44,7 +46,7 @@ main {
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -55,22 +57,35 @@ main {
   width: 100%;
   height: 100%;
   object-fit: fill;
+  z-index: -2;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.268);
   z-index: -1;
 }
 
 #toggleBtn {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   position: absolute;
   bottom: 70px;
   right: 20px;
-  padding: 10px 15px;
+  padding: 8px 13px;
   background: rgba(0,0,0,0.6);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 10pt;
 }
+
 #toggleBtn:hover {
   background: rgba(0,0,0,0.8);
 }
@@ -89,9 +104,9 @@ main {
   background: linear-gradient(
     to right, 
     rgba(0, 0, 0, 0.4) 0%,           
-    rgba(0, 0, 0, 0.3) 30%,          
-    rgba(28, 83, 5, 0.579) 70%,        
-    rgba(28, 83, 5, 0.726) 100%        
+    rgba(0, 0, 0, 0.3) 50%,          
+    rgba(28, 83, 5, 0.579) 90%,        
+    rgba(28, 83, 5, 0.726) 110%        
   );
   padding: 20px 60px;
 }
@@ -111,7 +126,7 @@ main {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 2rem;
-  FONT-STYLE: italic;
+  font-style: italic;
   letter-spacing: 1px;
   margin-bottom: 20px;
   animation: fadeInUp 1s ease-out 0.6s both;
@@ -121,7 +136,50 @@ main {
   align-self: flex-end;
   animation: fadeInUp 1s ease-out 0.9s both;
 }
-    /* Footer Styles */
+
+/* ===== PRMSU Today Swiper - LEFT ALIGNED ===== */
+.prmsu-today {
+  padding: 50px 0;
+  background: #f8f9fa;
+  width: 100%;
+  display: block;
+}
+
+.swiper-container-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 40px;
+}
+
+.swiper {
+  width: 520px !important;       
+  height: 630px !important;
+  margin: 0 !important;
+}
+
+.swiper-slide {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  border-radius: 15px;
+  object-fit: contain;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer Styles */
 .site-footer {
   background: linear-gradient(to left, #0b2001, #3c6404);
   color: white;
@@ -129,7 +187,7 @@ main {
   padding: 20px 10px;
   margin-top: 30px;
   font-size: 14px;
-  border-top: 4px solid #f1c40f; /* optional accent */
+  border-top: 4px solid #f1c40f;
 }
 
 .site-footer p {
@@ -175,6 +233,15 @@ main {
   .hero-overlay p {
     font-size: 1.2rem;
   }
+  
+  .swiper-container-wrapper {
+    padding-left: 20px;
+  }
+  
+  .swiper {
+    width: 90% !important;
+    height: 400px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -184,5 +251,18 @@ main {
 
   .hero-overlay p {
     font-size: 1rem;
+  }
+  
+  .swiper-container-wrapper {
+    padding-left: 10px;
+  }
+  
+  .swiper {
+    width: 95% !important;
+    height: 300px !important;
+  }
+  
+  .prmsu-backlinks {
+    padding: 20px 0 30px 10px;
   }
 }

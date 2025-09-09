@@ -2,24 +2,34 @@
 .org-page {
   padding: 40px 20px;
   font-family: 'Roboto', sans-serif;
+  background-color: antiquewhite;
 }
 
-/* Hero Section */
+/* ===== ORG HERO SECTION (like programs-hero) ===== */
 .org-hero {
+  background: linear-gradient(to right, #0b2001, #3c6404);
+  color: white;
   text-align: center;
-  margin-bottom: 40px;
+  padding: 80px 20px;
+  max-height: 300px;
 }
+
 .org-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 10px;
-  margin-top: 130px;
+  margin-top: 140px; /* keeps consistent spacing like programs-hero */
 }
+
 .org-hero .tagline {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
   font-style: italic;
-  color: #444;
-  font-size: 1.6rem;
+  color: #f1f1f1; /* softer white for contrast */
+  margin-top: 10px;
 }
+
 
 /* Sections (General) */
 .org-section {
@@ -92,3 +102,82 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+/* ===== Feature Grid for CCIT-SBO + Gallery ===== */
+.org-grid {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+/* CCIT-SBO feature card */
+.org-card.org-feature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.org-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+
+.org-info {
+  text-align: left;
+}
+
+.org-feature h2 {
+  margin: 0 0 8px;
+  color: #1c5305;
+}
+
+/* ===== GSAP Gallery Slider (RIGHT side, Landscape) ===== */
+.org-gallery {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;       /* smaller height since landscape */
+  overflow: hidden;
+  flex: 1;
+}
+
+.org-gallery .org-card {
+  position: absolute;
+  width: 380px;        /* wider */
+  height: 220px;       /* not too tall */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background: #fff;
+}
+
+.org-gallery .org-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* keep photos filling nicely */
+  border-radius: 12px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .org-gallery {
+    height: 180px;
+  }
+  .org-gallery .org-card {
+    width: 280px;
+    height: 160px;
+  }
+}
+
