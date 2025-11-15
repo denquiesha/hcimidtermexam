@@ -250,5 +250,21 @@ main {
   
   .prmsu-backlinks {
     padding: 20px 0 30px 10px;
+ 
   }
 }
+/* ===== GRADIENT TEXT (FINAL VERSION) ===== */
+.animated-gradient-text {
+  position: relative;
+  margin: 40px auto;
+  display: flex;
+  max-width: fit-content;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.25rem;
+  font-weight: 700;
+  font-size: 55px; /* adjust size here */
+  overflow: hidden;
+}
+

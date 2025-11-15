@@ -104,7 +104,7 @@ nav {
 }
 
 nav a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   letter-spacing: 0.3px; 
   color: white;
   text-decoration: none;
@@ -124,3 +124,4 @@ header.shrink nav a {
   font-size: 1.3rem;
   font-weight:505;
 }
+

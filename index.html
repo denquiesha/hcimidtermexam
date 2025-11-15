@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/stats.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
@@ -34,13 +35,29 @@
   </section> 
 
   <main>
-    <p>uhmmmme.</p>
-
-    <div style="padding: 50px;">
-      <h2>okie na to</h2>
-      <p>ihh kabangis</p>
-      <p>Feel ko 50% na ito</p>
+<!-- ==== STAT COUNTERS ==== -->
+<section class="stats-section">
+  <div class="stat-item">
+    <div class="stat-number animated-gradient-text">
+      <span class="text-content" data-target="15000">0</span><span class="plus">+</span>
     </div>
+    <p class="stat-label">Students</p>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-number animated-gradient-text">
+      <span class="text-content" data-target="48">0</span>
+    </div>
+    <p class="stat-label">Curriculum Program Offerings</p>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-number animated-gradient-text">
+      <span class="text-content" data-target="7">0</span>
+    </div>
+    <p class="stat-label">Campuses</p>
+  </div>
+</section>
 
     <!-- PRMSU Images Row - LEFT ALIGNED -->
     <section class="prmsu-today">
@@ -157,5 +174,8 @@
       },
     });
   </script>
+
+<script src="assets/js/stats.js"></script>
+
 </body>
 </html>

@@ -2,7 +2,7 @@
 .org-page {
   padding: 40px 20px;
   font-family: 'Roboto', sans-serif;
-  background-color: antiquewhite;
+  background-color: white;
 }
 
 /* ===== ORG HERO SECTION (like programs-hero) ===== */
@@ -10,7 +10,7 @@
   background: linear-gradient(to right, #0b2001, #3c6404);
   color: white;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 50px 60px;
   max-height: 300px;
 }
 
@@ -18,7 +18,7 @@
   font-size: 2.8rem;
   margin-bottom: 15px;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 140px; /* keeps consistent spacing like programs-hero */
+  margin-top: 0; /* keeps consistent spacing like programs-hero */
 }
 
 .org-hero .tagline {

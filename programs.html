@@ -5,10 +5,10 @@
   <title>CCIT Programs</title>
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/programs.css">
-  <link rel="stylesheet" href="assets/css/footer.css"> <!-- ✅ Added footer.css -->
+  <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body>
-  <!-- HEADER will be inserted dynamically -->
+  <!-- HEADER -->
   <div id="header"></div>
 
   <main>
@@ -26,7 +26,10 @@
 
     <!-- PROGRAM LIST SECTION -->
     <section class="programs-list">
+
+      <!-- MAIN UNDERGRADUATE PROGRAMS -->
       <h2>Our Undergraduate Programs</h2>
+
       <div class="program-cards">
         <div class="program-card">
           <h3>Bachelor of Science in Computer Science</h3>
@@ -47,21 +50,104 @@
           </p>
         </div>
       </div>
+
+      <!-- CAMPUS PROGRAMS -->
+      <h2>Programs by Campus</h2>
+
+      <div class="campus-cards">
+
+        <div class="campus-card">
+          <h3>Iba Campus</h3>
+          <ul>
+            <li>BS Computer Science</li>
+            <li>BS Information Technology</li>
+          </ul>
+        </div>
+
+        <div class="campus-card">
+          <h3>Castillejos Campus</h3>
+          <ul>
+            <li>BS Computer Science</li>
+          </ul>
+        </div>
+
+        <div class="campus-card">
+          <h3>San Marcelino Campus</h3>
+          <ul>
+            <li>BS Computer Science</li>
+          </ul>
+        </div>
+
+        <div class="campus-card">
+          <h3>Masinloc Campus</h3>
+          <ul>
+            <li>BS Information Technology</li>
+          </ul>
+        </div>
+
+        <div class="campus-card">
+          <h3>Candelaria Campus</h3>
+          <ul>
+            <li>BS Information Technology</li>
+          </ul>
+        </div>
+
+        <div class="campus-card">
+          <h3>Sta. Cruz Campus</h3>
+          <ul>
+            <li>BS Computer Science</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- GRADUATE SCHOOL -->
+      <h2>Graduate School</h2>
+
+      <div class="campus-cards">
+        <div class="campus-card">
+          <h3>Master of Science in Computer Science</h3>
+        </div>
+      </div>
+
     </section>
   </main>
 
+  <!-- FOOTER -->
   <div id="footer"></div>
 
-  <script>
-    // Load header
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
     fetch("header.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("header").innerHTML = data);
+      .then(res => {
+        if (!res.ok) throw new Error("Header not found");
+        return res.text();
+      })
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
 
-    // Load footer
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer").innerHTML = data);
-  </script>
+        // Load header.js AFTER header.html is inserted
+        const script = document.createElement("script");
+        script.src = "assets/js/header.js";
+
+        script.onload = () => {
+          console.log("Header JS loaded.");
+          // Initialize scroll effect
+          if (typeof initHeaderScrollEffect === "function") {
+            initHeaderScrollEffect();
+          }
+        };
+
+        document.body.appendChild(script);
+      })
+      .catch(err => console.error("Error loading header:", err));
+  });
+
+  // Load footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
 </body>
 </html>

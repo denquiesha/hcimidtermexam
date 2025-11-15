@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CCIT - About Us</title>
 
-  <!-- Existing CSS -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/about.css">
@@ -15,17 +18,78 @@
 <!-- Header placeholder -->
 <div id="header"></div>
 
-<!-- Hero Section -->
-<section class="about-hero">
-  <div class="hero-content">
+<!-- FULL-SCREEN VIDEO HERO -->
+<section class="about-video-hero">
+  <video id="aboutHeroVideo" autoplay muted loop playsinline class="about-hero-video">
+    <source src="https://github.com/denquiesha/hcimidtermexam/releases/download/v2-otherrelease/CCIT.State-of-the.-art.Facilities.mp4?raw=true" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="about-hero-overlay">
     <h1>About the College of Communication and Information Technology</h1>
     <p>Meet our leadership team and dedicated faculty driving innovation and excellence in computing education.</p>
+    <button id="aboutToggleBtn" class="video-toggle-btn">Pause</button>
+  </div>
+
+  <!-- SCROLL DOWN ARROW ONLY -->
+  <div class="scroll-down">
+    <a href="#goals-section" class="scroll-link">
+      <span class="arrow-down"></span>
+    </a>
   </div>
 </section>
 
-<!-- Main Content: Organizational Structure -->
+<!-- 3 COLUMNS: Goals (TEXT) | IT | CS -->
+<section class="goals-programs" id="goals-section">
+  <div class="gp-container">
+
+    <!-- LEFT: COLLEGE GOALS (TEXT) -->
+    <div class="goals-col">
+      <div class="goals-text-card">
+        <h3>College Goals</h3>
+        <ol class="goals-list">
+          <li>To produce graduates who are globally competitive and socially responsible professionals in communication and information technology;</li>
+          <li>To develop innovative leaders capable of addressing industry challenges through cutting-edge research and solutions;</li>
+          <li>To foster a culture of excellence, ethics, and lifelong learning in the digital age.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- MIDDLE: IT OBJECTIVES -->
+    <div class="program-col">
+      <div class="objective-card">
+        <div class="obj-icon">IT</div>
+        <h3>Bachelor of Science in Information Technology</h3>
+        <p class="obj-subtitle">The program aims to:</p>
+        <ol class="obj-list">
+          <li>Prepare graduates to be equipped with the principles and theories of computing leading to design and develop technological solutions for the industry, government and academe;</li>
+          <li>Develop globally competitive and well-rounded IT professionals for business solutions through innovations in the global digital community; and</li>
+          <li>Produce ethically responsible leaders in the management of computing technologies.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- RIGHT: CS OBJECTIVES -->
+    <div class="program-col">
+      <div class="objective-card">
+        <div class="obj-icon">CS</div>
+        <h3>Bachelor of Science in Computer Science</h3>
+        <p class="obj-subtitle">The program aims to:</p>
+        <ol class="obj-list">
+          <li>Prepare graduates to be equipped with the principles and theories of computing leading to the conduct of research and advanced studies;</li>
+          <li>Develop globally competitive and well-rounded CS professionals and researchers, proficient in designing and developing computing solutions; and</li>
+          <li>Produce morally upright leaders in the fast-changing ICT industry.</li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ORGANIZATIONAL STRUCTURE -->
 <section class="ccit-org">
   <div class="org-container">
+    <h1>IBA CAMPUS</h1>
     <h2>CCIT Organizational Structure</h2>
     <div class="org-chart">
 
@@ -79,10 +143,9 @@
 <!-- Footer placeholder -->
 <div id="footer"></div>
 
-<!-- JS to load header & footer -->
+<!-- JS: Load Header/Footer + Video + Scroll Down (Smooth) -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   // Load header
   fetch("header.html")
     .then(res => res.text())
@@ -103,8 +166,32 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => document.getElementById("footer").innerHTML = data)
     .catch(err => console.error("Error loading footer:", err));
 
+  // Video Toggle
+  const video = document.getElementById("aboutHeroVideo");
+  const btn = document.getElementById("aboutToggleBtn");
+  if (video && btn) {
+    btn.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+        btn.textContent = "Pause";
+      } else {
+        video.pause();
+        btn.textContent = "Play";
+      }
+    });
+  }
+
+  // Smooth scroll for down arrow only
+  document.querySelectorAll(".scroll-link").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
 });
 </script>
-
 </body>
 </html>

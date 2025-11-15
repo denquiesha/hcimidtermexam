@@ -25,7 +25,6 @@
 
     <section class="org-section">
       <div class="org-cards org-grid">
-        <!-- LEFT: CCIT-SBO with Logo -->
         <div class="org-card org-feature">
           <img src="assets/images/csbo.jpg" alt="CCIT-SBO Logo" class="org-logo">
           <div class="org-info">
@@ -34,7 +33,6 @@
           </div>
         </div>
 
-        <!-- RIGHT: GSAP Slider -->
         <div class="org-gallery">
           <div class="org-card"><img src="assets/images/11.png" alt="Event 1"></div>
           <div class="org-card"><img src="assets/images/13.png" alt="Event 2"></div>
@@ -43,7 +41,6 @@
         </div>
       </div>
 
-      <!-- Other orgs below -->
       <div class="org-cards">
         <div class="org-card org-sub">
           <h2>DIGITS</h2>
@@ -95,15 +92,34 @@
 
   <!-- Scripts -->
   <script>
-    // Load header and footer dynamically
     document.addEventListener("DOMContentLoaded", () => {
+      // Load header
       fetch("header.html")
-        .then(res => res.text())
-        .then(data => document.getElementById("header").innerHTML = data);
+        .then(res => {
+          if (!res.ok) throw new Error("Header not found");
+          return res.text();
+        })
+        .then(data => {
+          document.getElementById("header").innerHTML = data;
 
+          // Load header.js AFTER header.html is inserted
+          const script = document.createElement("script");
+          script.src = "assets/js/header.js";
+          script.onload = () => {
+            console.log("Header JS loaded.");
+            if (typeof initHeaderScrollEffect === "function") {
+              initHeaderScrollEffect();
+            }
+          };
+          document.body.appendChild(script);
+        })
+        .catch(err => console.error("Error loading header:", err));
+
+      // Load footer
       fetch("footer.html")
         .then(res => res.text())
-        .then(data => document.getElementById("footer").innerHTML = data);
+        .then(data => document.getElementById("footer").innerHTML = data)
+        .catch(err => console.error("Error loading footer:", err));
     });
   </script>
 

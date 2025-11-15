@@ -1,0 +1,90 @@
+/* ===== STATS SECTION ===== */
+.stats-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.stat-number .animated-gradient-text {
+  font-size: 4.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.plus {
+  font-size: 3rem;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to right,
+    #edbe49, #030279, #f7d171, #a7702e, #66506b
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 3s linear infinite;
+}
+
+.stat-label {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Re-use your existing gradient animation */
+.animated-gradient-text {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: .5rem;
+}
+
+.text-content {
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    #edbe49, #030279, #f7d171, #a7702e, #66506b
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stat-number .animated-gradient-text { font-size: 3.5rem; }
+  .plus { font-size: 2.5rem; }
+}
+
+@media (max-width: 480px) {
+  .stat-number .animated-gradient-text { font-size: 2.8rem; }
+  .plus { font-size: 2rem; }
+  .stats-section { gap: 2rem; }
+}

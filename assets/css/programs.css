@@ -4,7 +4,7 @@
   color: white;
   text-align: center;
   padding: 80px 20px;
-  max-height:300px;
+  max-height: 300px;
 }
 
 .programs-hero .hero-content {
@@ -16,7 +16,7 @@
   font-size: 2.8rem;
   margin-bottom: 15px;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 140px;
+  margin-top: 100px;
 }
 
 .programs-hero p {
@@ -34,6 +34,7 @@
 
 .programs-list h2 {
   font-size: 2rem;
+  margin-top: 40px;
   margin-bottom: 40px;
   color: #3c6404;
   font-family: 'Montserrat', sans-serif;
@@ -47,7 +48,7 @@
   margin: 0 auto;
 }
 
-/* ===== PROGRAM CARDS ===== */
+/* ===== MAIN PROGRAM CARDS ===== */
 .program-card {
   background: white;
   border-radius: 12px;
@@ -76,18 +77,55 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-  /* Footer Styles */
-.site-footer {
-  background: linear-gradient(to left, #0b2001, #3c6404);
-  color: white;
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 30px;
-  font-size: 14px;
-  border-top: 4px solid #f1c40f; /* optional accent */
+/* ===== CAMPUS CARDS ===== */
+.campus-cards {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.site-footer p {
-  margin: 5px 0;
-  line-height: 1.4;
+.campus-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.campus-card h3 {
+  font-size: 1.3rem;
+  color: #0b2001;
+  margin-bottom: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.campus-card ul {
+  padding-left: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+  line-height: 1.6;
+}
+
+.campus-card li {
+  margin-bottom: 6px;
+}
+
+.campus-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.campus-card ul {
+  list-style: none;      /* removes bullets */
+  padding: 0;            /* removes left padding */
+  margin: 0;             /* optional: removes extra spacing */
+  text-align: center;    /* centers the items */
+}
+.campus-card li {
+  margin-bottom: 6px;
+  text-align: center;
 }

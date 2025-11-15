@@ -1,0 +1,43 @@
+# ========================================
+# .gitignore for CCIT Website (PRMSU CCIT)
+# Videos in GitHub Releases → NO LFS NEEDED
+# ========================================
+
+# === OS & System Junk ===
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# === Editor / IDE ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === Cache & Temp ===
+.cache/
+.sass-cache/
+
+# === Local Backups / Temp ===
+backup/
+old/
+archive/
+temp/
+debug/
+
+# === Large Media (Huwag i-commit sa main repo) ===
+# → Videos are in GitHub Releases
+assets/videos/
+assets/images/raw/
+assets/images/temp/
+assets/images/*.psd
+assets/images/*.ai
+
+# === Git Metadata ===
+.git/
+.gitignore
+.gitattributes
