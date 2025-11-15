@@ -1,53 +1,31 @@
-/* ===== STATS SECTION ===== */
+/* ===== STAT COUNTERS – TIGHTER GAP ===== */
 .stats-section {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 4rem;
-  padding: 60px 20px;
+  gap: 60px;               
+  padding: 40px 20px;
   background: #f8f9fa;
-  text-align: center;
+  flex-wrap: wrap;
 }
 
 .stat-item {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.stat-number {
-  display: flex;
-  align-items: baseline;
-  gap: 0.2rem;
-}
-
-.stat-number .animated-gradient-text {
-  font-size: 4.5rem;
+.stat-number.animated-gradient-text {
+  margin: 0 0 8px 0;        
+  font-size: 55px;
   line-height: 1;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
-
-.plus {
-  font-size: 3rem;
-  font-weight: 700;
-  background-image: linear-gradient(
-    to right,
-    #edbe49, #030279, #f7d171, #a7702e, #66506b
-  );
-  background-size: 300% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient 3s linear infinite;
 }
 
 .stat-label {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #333;
+  margin: 0;               
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 700;
 }
 
 /* Re-use your existing gradient animation */

@@ -29,12 +29,60 @@
     <div class="hero-overlay">
       <h1>Join the College of Communication and Information Technology</h1>
       <p>Home of Leaders in Innovation</p>
-      <a class="btn" href="programs.html">Explore Programs</a>
+      <a href="programs.html" class="button explore-cta" style="--clr: darkblue;">
+  <span class="button__icon-wrapper">
+    <svg
+      viewBox="0 0 14 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="button__icon-svg"
+      width="10"
+    >
+      <path
+        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+        fill="currentColor"
+      ></path>
+    </svg>
+    <svg
+      viewBox="0 0 14 15"
+      fill="none"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+      class="button__icon-svg button__icon-svg--copy"
+    >
+      <path
+        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  </span>
+  Explore All
+        <!-- NEW CTA: JOIN US! -->
+      <a href="contact.html" class="button join-us-cta" style="--clr: #e67e22;">
+        <span class="button__icon-wrapper">
+          <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+            <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+          </svg>
+          <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg button__icon-svg--copy">
+            <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+          </svg>
+        </span>
+        Join Us!
+      </a>
+</a>
       <button id="toggleBtn" class="btn">⏸ Pause</button>
     </div>
+     <!-- SCROLL DOWN ARROW -->
+  <div class="scroll-down">
+    <a href="#vision-mission-section" class="scroll-link">
+      <span class="arrow-down"></span>
+    </a>
+  </div>
+
   </section> 
 
   <main>
+
 <!-- ==== STAT COUNTERS ==== -->
 <section class="stats-section">
   <div class="stat-item">
@@ -46,7 +94,7 @@
 
   <div class="stat-item">
     <div class="stat-number animated-gradient-text">
-      <span class="text-content" data-target="48">0</span>
+      <span class="text-content" data-target="65">0</span>
     </div>
     <p class="stat-label">Curriculum Program Offerings</p>
   </div>
@@ -59,8 +107,18 @@
   </div>
 </section>
 
-    <!-- PRMSU Images Row - LEFT ALIGNED -->
-    <section class="prmsu-today">
+<!-- PRMSU Images + Text Row - LEFT ALIGNED -->
+<section id="vision-mission-section" class="prmsu-today">
+  <!-- H2 Title - Left Aligned -->
+  <h2 class="section-title">Our Vision, Mission & Quality Policy</h2>
+
+  <!-- Two-Column Layout -->
+  <div class="vision-mission-container">
+    
+    <!-- LEFT COLUMN: Swiper + Text Below -->
+    <div class="vision-left-column">
+      
+      <!-- SWIPER IMAGES -->
       <div class="swiper-container-wrapper">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
@@ -74,11 +132,59 @@
               <img src="assets/images/quality_policy.jpg" alt="PRMSU Quality Policy">
             </div>
           </div>
-          <!-- Navigation dots -->
           <div class="swiper-pagination"></div>
         </div>
       </div>
-    </section>
+
+      <!-- TEXT BELOW SWIPER -->
+      <div class="vision-text-below-swiper">
+        <p><strong> Student Success and Graduates </strong></p>
+        <p>Since its integration in 1998, PRMSU has produced thousands of graduates who contribute to various professions nationwide. Every academic term, hundreds of PRMSU students receive diplomas across the campuses – in 2024 and 2025, single commencement ceremonies have celebrated on the order of 800–900 new alumni from multiple campuses combined. These graduates often excel in their careers and licensure exams: PRMSU alumni in fields like engineering and education regularly achieve commendable passing rates on board exams. This strong track record is a testament to the university’s academic rigor and support systems. PRMSU’s growing alumni network, spanning technologists, teachers, managers, and entrepreneurs, exemplifies the university’s legacy of shaping capable professionals who advance both local communities and the nation.</p>
+      </div>
+            <!-- CTA BUTTON -->  
+      <div class="cta-join-us">
+        <a href="contact.html" class="button" style="--clr: #e67e22;">
+          <span class="button__icon-wrapper">
+            <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+              <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+            </svg>
+            <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg button__icon-svg--copy">
+              <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+            </svg>
+          </span>
+          Join Us!
+        </a>
+        <a href="programs.html" class="button" style="--clr: darkblue;">
+          <span class="button__icon-wrapper">
+            <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+              <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+            </svg>
+            <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg button__icon-svg--copy">
+              <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+            </svg>
+          </span>
+          Explore All!
+        </a>
+      </div>
+    </div>
+     
+    <!-- RIGHT COLUMN: Text + Image Below -->
+    <div class="vision-right-column">
+      <div class="vision-text-content">
+        <p><strong>President Ramon Magsaysay State University (PRMSU)</strong></p>
+      <p>President Ramon Magsaysay State University (PRMSU) is the premier state university of Zambales, Philippines. Founded in 1910, PRMSU is named after the province’s native son, former President Ramon Magsaysay. In 2017 the institution’s name was officially changed from Ramon Magsaysay Technological University to its present name.</p>
+      <p><strong>Achievements and Recognitions</strong></p>
+      <p>PRMSU has earned numerous high-profile recognitions and awards at the local, national, and international levels, reflecting its growing impact and innovation. For example, in the 2025 World University Rankings for Innovation (WURI) – a global ranking of universities by real-world impact – PRMSU was placed 270th among over 1,200 universities worldwide. Notably, PRMSU also achieved Top 10 rankings in several WURI categories in 2025, including Entrepreneurial Spirit, Infrastructure/Technology, and Crisis Management.) Domestically, PRMSU has been classified as a Level III-A state university by the Philippine Commission on Higher Education (CHED) and Department of Budget and Management – placing it among the nation’s more advanced universities. Its curricular programs have earned high accreditation levels, and CHED has listed PRMSU as one of the Top 30 Philippine higher-education institutions recognized by foreign partners in China, South Korea, and beyond PRMSU’s research programs have also won awards: in 2008 it received the Regional Best Research Paper Award in Agriculture (among 26 member agencies) and in 2009 the Regional Best Research Paper Award in Energy/Industry (among 19 member agencies). PRMSU has repeatedly been recognized for high-quality governance and extension services in the region.</p>
+      </div>
+
+      <!-- IMAGE BELOW TEXT -->
+      <div class="vision-extra-image">
+        <img src="assets/images/prmsu_wuri.jpg" alt="PRMSU WURI Rankings">
+      </div>
+    </div>
+    
+  </div>
+</section>
 
     <!-- PRMSU Backlinks Section -->
     <section class="prmsu-backlinks">
@@ -176,6 +282,16 @@
   </script>
 
 <script src="assets/js/stats.js"></script>
-
+<script>
+  // Smooth scroll - gumagana pa rin sa bagong ID
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 </body>
 </html>

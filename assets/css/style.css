@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: #ffffff;
+  background: #f9f9f9;
   color: #333333;
 }
 
@@ -21,25 +21,61 @@ main {
   padding: 20px;
 }
 
-/* ===== BUTTONS ===== */
-.btn {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 15px;
-  font-size: 15pt;
-  background: #e78518;
-  color: black;
-  border-radius: 5px;
+/* From Uiverse.io by Creatlydev */ 
+.button {
+  line-height: 1;
   text-decoration: none;
-  transition: background 0.3s ease;
+  display: inline-flex;
   border: none;
   cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--clr);
+  color: #fff;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
 }
 
-.btn:hover {
-  background: #c9d5d5;
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #000;
+}
+
+.button:hover .button__icon-wrapper {
+  color: #000;
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
 }
 
 /* ===== HERO SECTION ===== */
@@ -137,23 +173,107 @@ main {
   animation: fadeInUp 1s ease-out 0.9s both;
 }
 
-/* ===== PRMSU Today Swiper - LEFT ALIGNED ===== */
-.prmsu-today {
-  padding: 50px 0;
+/* ===== STAT COUNTERS – TIGHTER GAP + CUSTOM LABELS ===== */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px 20px 20px 20px;
   background: #f8f9fa;
-  width: 100%;
-  display: block;
+  flex-wrap: wrap;
 }
 
+.stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number.animated-gradient-text {
+  margin: 0 0 8px 0;
+  font-size: 55px;
+  line-height: 1;
+}
+
+.stat-label {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #1c5305;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== PRMSU TODAY - FULL WIDTH, TOP-ALIGNED ===== */
+.prmsu-today {
+  padding: 30px 0 60px 0;
+  background: #f8f9fa;
+}
+
+/* H2 Title - Left Aligned */
+.prmsu-today .section-title {
+  text-align: left;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1c5305;
+  margin: 0 0 30px 40px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+}
+
+/* Orange underline */
+.prmsu-today .section-title::after {
+  content: '';
+  display: block;
+  width: 6.7in;
+  height: 5px;
+  background: #e78518;
+  margin: 12px 0 0 0;
+  border-radius: 2px;
+}
+
+/* MAIN CONTAINER - FULL WIDTH, TOP ALIGNED */
+.vision-mission-container {
+  display: flex;
+  align-items: flex-start;     /* ← TOP-ALIGNED: right side hindi bumaba */
+  gap: 50px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 40px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+/* LEFT COLUMN: Swiper + Text Below */
+.vision-left-column {
+  flex: 0 0 520px;
+  min-width: 300px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* RIGHT COLUMN: Text + Image - STAYS AT TOP */
+.vision-right-column {
+  flex: 1;
+  min-width: 300px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;      /* ← HINDI BUMABA */
+}
+
+/* SWIPER - FULL WIDTH IN LEFT COLUMN */
 .swiper-container-wrapper {
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 40px;
+  padding: 0;
 }
 
 .swiper {
-  width: 520px !important;       
+  width: 100% !important;
   height: 630px !important;
   margin: 0 !important;
 }
@@ -169,31 +289,288 @@ main {
   width: 100%;
   height: auto;
   max-height: 100%;
-  border-radius: 15px;
   object-fit: contain;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  border-radius: 15px;
   transition: transform 0.3s ease;
 }
 
 .swiper-slide img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
+/* TEXT BELOW SWIPER - FULL WIDTH, LEFT ALIGNED */
+.vision-text-below-swiper {
+  margin-top: 50px;
+  margin-left: 30px;
+  width: 80%;
+  padding: 20px 30px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  backdrop-filter: blur(3px);
+ 
+}
+
+.vision-text-below-swiper p {
+  margin: 0;
+   font-style: italic;
+}
+
+/* STRONG TEXT - ORANGE + ITALIC */
+.vision-text-below-swiper strong {
+  color: #e78518;           /* ← Orange */
+  font-weight: 700;         /* ← Still bold */
+}
+
+/* RIGHT SIDE TEXT - FULLY JUSTIFIED, NO BUNGI, PROFESSIONAL LOOK */
+.vision-text-content {
+  padding: 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: justify;
+  text-justify: inter-word;           /* Best word spacing */
+  hyphens: auto;                      /* Auto-hyphenation */
+  overflow-wrap: break-word;
+  word-break: normal;
+  margin-top: 65px;
+}
+
+.vision-text-content p {
+  margin: 0 0 1rem 0;
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/* SECRET: NO BUNGI ON LAST LINE (PRINT DESIGN TRICK) */
+.vision-text-content p:last-child::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 0;
+}
+.vision-text-content strong {
+  color: #e78518;
+}
+
+/* NEW IMAGE - 90% WIDTH, CENTERED IN RIGHT COLUMN */
+.vision-extra-image {
+  width: 90%;
+  max-width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-left: 100px;
+}
+
+.vision-extra-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  object-fit: contain;
+  background: #fff;
+  transition: transform 0.3s ease;
+}
 
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  .vision-mission-container {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  .vision-left-column,
+  .vision-right-column {
+    flex: none;
+    width: 100%;
+    align-self: stretch;
+  }
+  .vision-left-column { margin-bottom: 30px; }
+  .vision-text-below-swiper { padding: 0 15px; margin-top: 20px; }
+  .vision-extra-image { width: 95%; margin: 25px auto 0; }
+  .swiper { height: 450px !important; }
+  .prmsu-today .section-title { margin-left: 20px; font-size: 1.8rem; }
+  .stats-section { gap: 30px; padding: 30px 15px; }
+  .stat-number.animated-gradient-text { font-size: 44px; }
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    align-items: center;
+    text-align: center;
+    padding-right: 20px;
+  }
+  .hero-overlay h1 { font-size: 2.5rem; }
+  .hero-overlay p { font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  .prmsu-today { padding: 40px 10px; }
+  .vision-mission-container { padding: 0 10px; }
+  .vision-text-below-swiper { padding: 0 10px; font-size: 1rem; }
+  .swiper { height: 350px !important; }
+  .prmsu-today .section-title { margin-left: 10px; font-size: 1.5rem; }
+  .hero-overlay h1 { font-size: 2rem; }
+  .hero-overlay p { font-size: 1rem; }
+  .prmsu-backlinks { padding: 20px 0 30px 10px; }
+}
+
+/* ===== GRADIENT TEXT (FINAL VERSION) ===== */
+.animated-gradient-text {
+  position: relative;
+  margin: 0 0 8px 0;
+  display: flex;
+  max-width: fit-content;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.25rem;
+  font-weight: 700;
+  font-size: 55px;
+  overflow: hidden;
+}
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  animation: bounce 2s infinite;
+}
+
+.scroll-link { display: block; width: 40px; height: 60px; }
+
+.arrow-down {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #e78518;
+  border-radius: 50px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.arrow-down::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid #e78518;
+  border-bottom: 3px solid #e78518;
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-15px); }
+  60% { transform: translateX(-50%) translateY(-8px); }
+}
+
+@keyframes scroll {
+  0% { opacity: 0; top: 15px; }
+  50% { opacity: 1; }
+  100% { opacity: 0; top: 30px; }
+}
+
+@media (max-width: 768px) {
+  .scroll-down { bottom: 30px; }
+  .arrow-down { width: 35px; height: 50px; }
+}
+/* ===== CTA JOIN US BUTTON ===== */
+.cta-join-us {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.cta-join-us .button {
+  font-size: 1.1rem;
+  padding: 0.85rem 1.8rem;
+  padding-left: 1.2rem;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cta-join-us {
+    margin-top: 25px;
+  }
+  .cta-join-us .button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-join-us .button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.3rem;
+  }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ===== JOIN US CTA - SA BABA NG EXPLORE ALL ===== */
+.join-us-cta {
+  margin-top: 18px;           /* ← Space sa pagitan ng dalawang button */
+  animation: fadeInUp 1s ease-out 1.2s both;
+  display: inline-flex;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .join-us-cta {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .join-us-cta {
+    margin-top: 12px;
+    font-size: 0.95rem;
+  }
+  .join-us-cta .button__icon-wrapper {
+    width: 22px;
+    height: 22px;
+  }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ===== CTA BUTTON ANIMATIONS (EXISTING + NEW) ===== */
+.explore-cta {
+  animation: slideUpFade 0.8s ease-out 0.9s both;
+}
+
+.join-us-cta {
+  animation: slideUpFade 0.8s ease-out 1.2s both;
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes slideUpFade {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -204,67 +581,8 @@ main {
   }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* Mobile */
 @media (max-width: 768px) {
-  .hero-overlay {
-    align-items: center;
-    text-align: center;
-    padding-right: 20px;
-  }
-
-  .hero-overlay h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-overlay p {
-    font-size: 1.2rem;
-  }
-  
-  .swiper-container-wrapper {
-    padding-left: 20px;
-  }
-  
-  .swiper {
-    width: 90% !important;
-    height: 400px !important;
-  }
+  .explore-cta { animation-delay: 0.7s; }
+  .join-us-cta { animation-delay: 1.0s; }
 }
-
-@media (max-width: 480px) {
-  .hero-overlay h1 {
-    font-size: 2rem;
-  }
-
-  .hero-overlay p {
-    font-size: 1rem;
-  }
-  
-  .swiper-container-wrapper {
-    padding-left: 10px;
-  }
-  
-  .swiper {
-    width: 95% !important;
-    height: 300px !important;
-  }
-  
-  .prmsu-backlinks {
-    padding: 20px 0 30px 10px;
- 
-  }
-}
-/* ===== GRADIENT TEXT (FINAL VERSION) ===== */
-.animated-gradient-text {
-  position: relative;
-  margin: 40px auto;
-  display: flex;
-  max-width: fit-content;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1.25rem;
-  font-weight: 700;
-  font-size: 55px; /* adjust size here */
-  overflow: hidden;
-}
-

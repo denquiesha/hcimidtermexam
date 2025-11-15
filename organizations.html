@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,81 +13,140 @@
   <link rel="stylesheet" href="assets/css/organizations.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 </head>
 <body>
 
   <!-- HEADER -->
   <div id="header"></div>
 
-  <main class="org-page">
-    <section class="org-hero">
-      <h1>Student Organizations & Campus Groups</h1>
-      <p class="tagline">Grow your skills, lead your community, and belong to something bigger.</p>
-    </section>
+<main class="org-page">
+  <section class="org-hero">
+    <h1>Student Organizations & Campus Groups</h1>
+    <p class="tagline">Grow your skills, lead your community, and belong to something bigger.</p>
+  </section>
 
-    <section class="org-section">
-      <div class="org-cards org-grid">
-        <div class="org-card org-feature">
-          <img src="assets/images/csbo.jpg" alt="CCIT-SBO Logo" class="org-logo">
-          <div class="org-info">
-            <h2>CCIT-SBO</h2>
-            <p><em>College of Communication and Information Technology</em></p>
-          </div>
-        </div>
+<!-- ==================== MAIN 4 CCIT ORGS WITH COVERFLOW SLIDER ==================== -->
+<section class="main-orgs-section">
 
-        <div class="org-gallery">
-          <div class="org-card"><img src="assets/images/11.png" alt="Event 1"></div>
-          <div class="org-card"><img src="assets/images/13.png" alt="Event 2"></div>
-          <div class="org-card"><img src="assets/images/17.png" alt="Event 3"></div>
-          <div class="org-card"><img src="assets/images/40.png" alt="Event 4"></div>
-        </div>
+  <!-- CCIT-SBO -->
+  <div class="org-block">
+    <div class="org-info-left">
+      <img src="assets/images/csbo.jpg" alt="CCIT-SBO Logo" class="main-org-logo">
+      <div class="org-text">
+        <h2>CCIT-SBO</h2>
+        <p class="org-fullname">College of Communication and Information Technology Student Body Organization</p>
+        <p class="org-desc">The official student government representing CCIT students in university-wide decisions and leading major college events.</p>
       </div>
+    </div>
 
-      <div class="org-cards">
-        <div class="org-card org-sub">
-          <h2>DIGITS</h2>
-          <p><em>(Meaning later)</em></p>
-        </div>
-        <div class="org-card org-sub">
-          <h2>ASCII</h2>
-          <p><em>Association of Students in Communication and Information Interchange</em></p>
-        </div>
+    <div class="swiper org-events-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/images/11.png" alt="CCIT-SBO Event"></div>
+        <div class="swiper-slide"><img src="assets/images/13.png" alt="CCIT-SBO Event"></div>
+        <div class="swiper-slide"><img src="assets/images/17.png" alt="CCIT-SBO Event"></div>
+        <div class="swiper-slide"><img src="assets/images/40.png" alt="CCIT-SBO Event"></div>
+        <div class="swiper-slide"><img src="assets/images/sboextra.jpg" alt="CCIT-SBO Event"></div>
       </div>
-    </section>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
 
-    <section class="org-wrapper">
-      <div class="org-section">
-        <h2>CCIT Publication</h2>
-        <div class="org-card">
-          <h3>The Cipher</h3>
-        </div>
+  <!-- DIGITS -->
+  <div class="org-block reverse">
+    <div class="org-info-left">
+      <img src="assets/images/digits.jpg" alt="DIGITS Logo" class="main-org-logo">
+      <div class="org-text">
+        <h2>DIGITS</h2>
+        <p class="org-fullname">Development, Innovation, and Growth for Information Technology Students</p>
+        <p class="org-desc">IT students united — coding bootcamps, web/app development, cybersecurity talks, and hackathons.</p>
       </div>
+    </div>
 
-      <div class="org-section">
-        <h2>University Publication<br>(Main Campus)</h2>
-        <div class="org-card">
-          <h3>The Bastion Group of Publication</h3>
-        </div>
+    <div class="swiper org-events-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/images/digits1.jpg" alt="DIGITS Event"></div>
+        <div class="swiper-slide"><img src="assets/images/digits2.jpg" alt="DIGITS Event"></div>
+        <div class="swiper-slide"><img src="assets/images/digits3.jpg" alt="DIGITS Event"></div>
+        <div class="swiper-slide"><img src="assets/images/digits4.jpg" alt="DIGITS Event"></div>
       </div>
-    </section>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
 
-    <section class="org-section">
-      <h2>Other Organizations (Main Campus)</h2>
-      <ul class="org-list">
-        <li>PRMSU Supreme Student Government</li>
-        <li>PRMSU Peer Facilitators</li>
-        <li>PRMSU CADO</li>
-        <li>PRMSU Teatro Dingal (TELON, ENTABLADO, AT AKO TUNGO SA RESPONSABLENG ORGANISASYON - DINGAL)</li>
-        <li>Philippine Anti Illegal Drugs Strategy</li>
-        <li>Young Entrepreneurs Society</li>
-        <li>Ramonian Varsity Christian Fellowship</li>
-        <li>PRMSU Red Cross Youth Council</li>
-        <li>PRMSU PATEL - Patriot Association of Triumphant and Excellent Leaders</li>
-        <li>PRMSU KDT - Kultura Dance Troupe</li>
-        <li>HOPE Student Campus Ministry</li>
-      </ul>
-    </section>
-  </main>
+  <!-- ASCII (Corrected for CS!) -->
+  <div class=" propiet org-block">
+    <div class="org-info-left">
+      <img src="assets/images/Logo_ASCII.png" alt="ASCII Logo" class="main-org-logo">
+      <div class="org-text">
+        <h2>ASCII</h2>
+        <p class="org-fullname">Association of Students in Computing and Information</p>
+        <p class="org-desc">The official org of BS Computer Science students — competitive programming, algorithm contests, research, and tech seminars.</p>
+      </div>
+    </div>
+
+    <div class="swiper org-events-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/images/ascii1.jpg" alt="ASCII Contest"></div>
+        <div class="swiper-slide"><img src="assets/images/ascii2.jpg" alt="ASCII Workshop"></div>
+        <div class="swiper-slide"><img src="assets/images/ascii3.jpg" alt="ASCII Members"></div>
+        <div class="swiper-slide"><img src="assets/images/ascii4.jpg" alt="ASCII Event"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <!-- The Cipher -->
+  <div class="org-block reverse">
+    <div class="org-info-left">
+      <img src="assets/images/cipherpub.jpg" alt="The Cipher Logo" class="main-org-logo">
+      <div class="org-text">
+        <h2>The Cipher</h2>
+        <p class="org-fullname">Official CCIT College Publication</p>
+        <p class="org-desc">The student-run publication delivering news, features, literary works, and creative content for the CCIT community.</p>
+      </div>
+    </div>
+
+    <div class="swiper org-events-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/images/cipher1.jpg" alt="The Cipher Issue"></div>
+        <div class="swiper-slide"><img src="assets/images/cipher2.jpg" alt="The Cipher Launch"></div>
+        <div class="swiper-slide"><img src="assets/images/cipher3.jpg" alt="Writing Workshop"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+</section>
+
+  <!-- ==================== OTHER ORGANIZATIONS (Main Campus) ==================== -->
+  <section class="org-section">
+    <h2>Other Recognized Organizations (Main Campus)</h2>
+    <div class="org-cards other-orgs-grid">
+      <!-- Same cards as before, with logos -->
+      <div class="org-card org-sub"><img src="assets/images/ssg.jpg" class="org-logo-small"><div class="org-info"><h3>PRMSU Supreme Student Government</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/pf.jpg" class="org-logo-small"><div class="org-info"><h3>PRMSU Peer Facilitators</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/cado.jpg" class="org-logo-small"><div class="org-info"><h3>PRMSU CADO</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/teatro.jpg" class="org-logo-small"><div class="org-info"><h3>PRMSU Teatro Dingal</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/pads.jpg" class="org-logo-small"><div class="org-info"><h3>Philippine Anti Illegal Drugs Strategy</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/yes.jpg" class="org-logo-small"><div class="org-info"><h3>Young Entrepreneurs Society</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/rvcf.jpg" class="org-logo-small"><div class="org-info"><h3>Ramonian Varsity Christian Fellowship</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/redcross.jpg" class="org-logo-small"><div class="org-info"><h3>PRMSU Red Cross Youth Council</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/patel.jpg" class="org-logo-small"><div class="org-info"><h3>PRMSU PATEL</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/kdt.jpg" class="org-logo-small"><div class="org-info"><h3>PRMSU KDT - Kultura Dance Troupe</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/hope.jpg" class="org-logo-small"><div class="org-info"><h3>HOPE Student Campus Ministry</h3></div></div>
+      <div class="org-card org-sub"><img src="assets/images/bastion.jpg" class="org-logo-small"><div class="org-info"><h3>The Bastion Group of Publication</h3></div></div>
+    </div>
+  </section>
+</main>
 
   <!-- FOOTER -->
   <div id="footer"></div>
@@ -156,6 +217,36 @@
       updateCards();
     });
   </script>
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const sliders = document.querySelectorAll('.org-events-slider');
+    sliders.forEach(slider => {
+      new Swiper(slider, {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        loop: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>

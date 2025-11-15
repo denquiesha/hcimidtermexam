@@ -31,12 +31,13 @@
     <button id="aboutToggleBtn" class="video-toggle-btn">Pause</button>
   </div>
 
-  <!-- SCROLL DOWN ARROW ONLY -->
-  <div class="scroll-down">
-    <a href="#goals-section" class="scroll-link">
-      <span class="arrow-down"></span>
-    </a>
-  </div>
+  <!-- SCROLL DOWN ARROW (ORANGE - MAIN PAGE STYLE) -->
+<div class="scroll-down-main">
+  <a href="#goals-section" class="scroll-link-main">
+    <span class="arrow-down-main"></span>
+  </a>
+</div>
+
 </section>
 
 <!-- 3 COLUMNS: Goals (TEXT) | IT | CS -->
@@ -166,31 +167,43 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => document.getElementById("footer").innerHTML = data)
     .catch(err => console.error("Error loading footer:", err));
 
-  // Video Toggle
+  // Video Toggle - Updated with icon + lower-right support
   const video = document.getElementById("aboutHeroVideo");
   const btn = document.getElementById("aboutToggleBtn");
+
   if (video && btn) {
+    // Initial state: video is autoplaying
+    btn.innerHTML = 'Pause';
+    btn.classList.add('playing');
+
     btn.addEventListener("click", () => {
-      if (video.paused) {
+       if (video.paused) {
         video.play();
-        btn.textContent = "Pause";
+        btn.textContent = "⏸ Pause";
       } else {
         video.pause();
-        btn.textContent = "Play";
+        btn.textContent = "▶ Play";
       }
+    });
+
+    // Sync if video ends
+    video.addEventListener('ended', () => {
+      btn.innerHTML = 'Play';
+      btn.classList.remove('playing');
+      btn.classList.add('paused');
     });
   }
 
-  // Smooth scroll for down arrow only
-  document.querySelectorAll(".scroll-link").forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    });
+ // Smooth scroll for NEW orange arrow
+document.querySelectorAll(".scroll-link-main").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   });
+});
 });
 </script>
 </body>
