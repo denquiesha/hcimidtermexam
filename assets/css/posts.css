@@ -1,14 +1,16 @@
 /* ===== NEWS & EVENTS PAGE ===== */
 .posts-hero {
   position: relative;
-  height: 70vh;
-  min-height: 500px;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/images/news/hero-bg.jpg') center/cover no-repeat;
+  height: 70vh;                    
+  max-height: 400px;               
+  background: linear-gradient(to right, #0b2001, #3c6404);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
+  padding: 80px 20px;
+  overflow: hidden;                /* ← Prevent content overflow */
 }
 
 .hero-overlay h1 {
