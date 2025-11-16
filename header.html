@@ -1,36 +1,37 @@
 <header>
   <div class="logo-container">
-    <!-- PRMSU Logo -->
     <img src="assets/images/prmsulogo.png" alt="PRMSU Logo" class="prmsu-logo">
-
-    <!-- CCIT Logo -->
     <img src="assets/images/ccit-logo.png" alt="CCIT Logo" class="ccit-logo">
-
-    <!-- University Text -->
     <div class="header-text">
       <h1>PRESIDENT RAMON MAGSAYSAY STATE UNIVERSITY</h1>
       <h2>COLLEGE OF COMMUNICATION AND INFORMATION TECHNOLOGY</h2>
     </div>
   </div>
 
-  <nav>
+  <!-- Desktop Nav (Single Line Forever) -->
+  <nav class="desktop-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About CCIT</a>
     <a href="programs.html">Programs</a>
     <a href="organizations.html">Organizations</a>
-    <a href="posts.html">News and Events</a>
+    <a href="posts.html">News & Events</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <!-- Mobile Hamburger -->
+  <button class="mobile-menu-btn" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About CCIT</a>
+    <a href="programs.html">Programs</a>
+    <a href="organizations.html">Organizations</a>
+    <a href="posts.html">News & Events</a>
     <a href="contact.html">Contact Us</a>
   </nav>
 </header>
-
-<!-- AUTO-ACTIVE SCRIPT (OUTSIDE HEADER) -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const current = location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll("nav a").forEach(a => {
-    if (a.getAttribute("href") === current) {
-      a.classList.add("active");
-    }
-  });
-});
-</script>

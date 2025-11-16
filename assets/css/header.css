@@ -1,127 +1,211 @@
-/* ===== Default Font Setup ===== */
-body {
-  font-family: 'Monsterrat', sans-serif; /* Default for body text */
-  font-weight: 400;
-  color: #222;
-  line-height: 1.2;
-  margin: 0;
-  padding: 0;
-}
+/* ==================================== */
+/*   PRMSU CCIT - FINAL + HAMBURGER BACK */
+/*   Mobile Perfect | No Overflow        */
+/* ==================================== */
 
-/* Headings use Montserrat */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  margin: 0;
-}
-
-/* ===== HEADER ===== */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 130px;
-  padding: 0 30px;
+  top: 0; left: 0; right: 0;
+  height: 110px;
+  padding: 0 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
-  transition: all 0.3s ease;
-  background: rgba(11, 32, 1, 0.3);
-}
-
-header.transparent {
-  background: rgba(11, 32, 1, 0.477);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(5px);
-}
-
-header.solid {
-  background: #3c6404;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  background: #0b2001;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-family: 'Montserrat', sans-serif;
 }
 
 header.shrink {
-  height: 100px;
-  padding: 0 20px;
+  height: 80px;
+  padding: 0 50px;
+  background: #0b2001;
 }
 
 /* ===== LOGO AREA ===== */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
-  height: 100%;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .logo-container img {
-  max-height: 120px;
+  height: 78px;
   width: auto;
-  object-fit: cover;
+  max-width: 78px;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  object-fit: contain;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: all 0.4s ease;
 }
 
 header.shrink .logo-container img {
-  max-height: 85px;
+  height: 62px;
+  max-width: 62px;
 }
 
-/* ===== HEADER TEXT ===== */
+/* ===== HEADER TEXT - NO OVERFLOW ===== */
 .header-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  color: white;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50vw;
 }
 
 .header-text h1 {
-  color: #ffffff;
-  font-size: 18pt;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 .header-text h2 {
+  font-size: 1.02rem;
   color: #edbe49;
-  font-weight: bold;
-  font-size: 16pt;
+  font-weight: 700;
+  margin: 2px 0 0;
+  letter-spacing: 0.6px;
 }
 
-header.shrink .header-text h1 {
-  font-size: 18px;
-}
+header.shrink .header-text h1 { font-size: 1rem; }
+header.shrink .header-text h2 { font-size: 0.92rem; }
 
-header.shrink .header-text h2 {
-  font-size: 16px;
-}
-
-/* ===== NAVIGATION ===== */
-nav {
+/* ===== DESKTOP NAV ===== */
+.desktop-nav {
   display: flex;
+  gap: 28px;
   align-items: center;
-  gap: 17px;
-  margin-right: 100px;
 }
 
-nav a {
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 0.3px; 
+.desktop-nav a {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
   position: relative;
-  font-weight:480;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-nav a:hover {
-  color: #edbe49;
-  text-decoration: underline;
-  transform: scale(1.1);
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: #edbe49;
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
-header.shrink nav a {
-  font-size: 1.3rem;
-  font-weight:505;
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after { width: 100%; }
+
+.desktop-nav a:hover,
+.desktop-nav a.active { color: #edbe49; }
+
+/* ===== HAMBURGER MENU - BUMALIK NA! ===== */
+.mobile-menu-btn {
+  display: none;                    /* Hidden sa desktop */
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
 }
 
+.mobile-menu-btn span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+/* ===== MOBILE NAV ===== */
+.mobile-nav {
+  position: fixed;
+  top: 0; right: -100%;
+  width: 85%;
+  max-width: 300px;
+  height: 100vh;
+  background: #0b2001;
+  padding: 110px 30px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.4s ease;
+  z-index: 999;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+}
+
+.mobile-nav.active { right: 0; }
+
+.mobile-nav a {
+  color: white;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active { color: #edbe49; padding-left: 15px; }
+
+/* ===== MOBILE RESPONSIVE - HAMBURGER VISIBLE NA! ===== */
+@media (max-width: 768px) {
+  header {
+    height: 90px;
+    padding: 0 20px !important;
+  }
+  header.shrink { height: 75px; padding: 0 15px !important; }
+
+  .desktop-nav { display: none; }
+  .mobile-menu-btn { display: flex !important; }   /* BUMALIK NA TALAGA! */
+
+  .logo-container img { height: 62px !important; max-width: 62px !important; }
+  header.shrink .logo-container img { height: 52px !important; max-width: 52px !important; }
+
+  .header-text {
+    max-width: 40vw;
+    font-size: 0.95rem;
+  }
+  .header-text h1 { font-size: 0.95rem !important; }
+  .header-text h2 { font-size: 0.88rem !important; }
+}
+
+@media (max-width: 480px) {
+  header { padding: 0 15px !important; height: 85px; }
+  header.shrink { height: 70px; }
+
+  .logo-container img { height: 56px !important; }
+  header.shrink .logo-container img { height: 48px !important; }
+
+  .header-text h1 { font-size: 0.88rem !important; }
+  .header-text h2 { font-size: 0.82rem !important; }
+
+  header.shrink .header-text {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}

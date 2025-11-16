@@ -3,7 +3,7 @@
   position: relative;
   height: 65vh;
   min-height: 500px;
-  background: linear-gradient(135deg, rgba(28,83,5,0.9), rgba(15,58,3,0.95)), url('assets/images/contact-hero.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(28,83,5,0.9), rgba(15,58,3,0.95)), url('../images/contact-hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +133,13 @@
   color: #1c5305;
 }
 
-.form-success i { width: 60px; height: 60px; stroke-width: 2; color: #27ae60; margin-bottom: 20px; }
+.form-success i { 
+  width: 60px; 
+  height: 60px; 
+  stroke-width: 2; 
+  color: #27ae60; 
+  margin-bottom: 20px; 
+}
 .form-success h3 { font-size: 2rem; margin-bottom: 10px; }
 
 /* Contact Info */
@@ -205,7 +211,10 @@
 
 /* Responsive */
 @media (max-width: 992px) {
-  .contact-container { grid-template-columns: 1fr; gap: 50px; }
+  .contact-container { 
+    grid-template-columns: 1fr; 
+    gap: 50px; 
+  }
   .contact-hero { height: 55vh; }
   .hero-content h1 { font-size: 3.8rem; }
 }
