@@ -108,6 +108,8 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700;
 }
 
 .tag.event { background: #e78518; color: white; }
@@ -144,6 +146,9 @@
   color: #444;
   line-height: 1.7;
   margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 1rem;
+
 }
 
 .read-more {
@@ -152,6 +157,8 @@
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
+  font-family: 'Monsterrat', sans-serif !important;
+  font-size: 1rem;
 }
 
 .read-more:hover {

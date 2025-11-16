@@ -44,7 +44,7 @@
 /* Form Card */
 .contact-form-card {
   background: white;
-  padding: 50px 40px;
+  padding: 50px;
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
@@ -87,12 +87,13 @@
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 14px 18px;
+  padding: 16px 20px;
   border: 2px solid #ddd;
   border-radius: 12px;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -177,6 +178,7 @@
   margin: 0;
   color: #555;
   line-height: 1.6;
+  font-family: "Roboto", sans-serif;
 }
 
 .map-container {
